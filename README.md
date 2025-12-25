@@ -1,5 +1,6 @@
 # computer-networks-project
 📘 Project Overview
+
 This project focuses on a practical and in-depth analysis of the TCP/IP protocol suite, bridging the gap between theoretical concepts learned in the "Computer Networks" course and real-world application. The project simulates end-to-end network traffic, starting from data generation at the Application Layer, through the encapsulation processes across various layers, to the transmission and analysis of packets in a real network environment.
 
 🎯 Project Goals
