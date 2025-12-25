@@ -1,0 +1,21 @@
+msg_id,app_protocol,src_app,dst_app,message,timestamp
+1,HTTP,client_browser,web_server,GET /index.html HTTP/1.1,0.026
+2,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 256),0.03
+3,HTTP,client_browser,web_server,GET /style.css HTTP/1.1,0.041
+4,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 512),0.045
+5,HTTP,client_browser,web_server,GET /script.js HTTP/1.1,0.048
+6,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 2920),0.055
+7,HTTP,client_browser,web_server,GET /images/logo.png HTTP/1.1,0.065
+8,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 1460),0.072
+9,HTTP,client_browser,web_server,POST /api/data HTTP/1.1,0.084
+10,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 1460),0.09
+11,HTTP,client_browser,web_server,GET /index.html HTTP/1.1,0.1
+12,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 1460),0.107
+13,HTTP,client_browser,web_server,GET /style.css HTTP/1.1,0.115
+14,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 512),0.118
+15,HTTP,client_browser,web_server,GET /script.js HTTP/1.1,0.13
+16,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 1460),0.137
+17,HTTP,client_browser,web_server,GET /images/logo.png HTTP/1.1,0.144
+18,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 512),0.147
+19,HTTP,client_browser,web_server,POST /api/data HTTP/1.1,0.152
+20,HTTP,web_server,client_browser,HTTP/1.1 200 OK (size 512),0.161
