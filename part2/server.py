@@ -83,3 +83,28 @@ def handle_client(conn, addr):
         if username in clients:
             del clients[username]
             broadcast_user_list() # עדכון רשימה לכולם
+            log("DISCONNECT", f"User '{username}' removed.")
+        conn.close()
+
+def start_server():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind((HOST, PORT))
+    server.listen(MAX_CLIENTS)
+    
+    log("INIT", f"Server running on {HOST}:{PORT}")
+    log("INFO", "Waiting for connections...")
+
+    while server_running:
+        try:
+            conn, addr = server.accept()
+            # יצירת Thread לכל לקוח חדש
+            thread = threading.Thread(target=handle_client, args=(conn, addr))
+            thread.daemon = True # ייסגר אוטומטית כשהתוכנית הראשית תיסגר
+            thread.start()
+        except KeyboardInterrupt:
+            break
+            
+    server.close()
+
+if __name__ == "__main__":
+    start_server()
