@@ -192,10 +192,6 @@ class ModernChatClient:
         # הוספת עצמי
         self.user_list_box.insert(tk.END, f"{self.username} (You)")
         self.user_list_box.itemconfig(tk.END, {'fg': '#00ff00'}) # ירוק לעצמי
-        
-        # הוספת הבוט באופן ידני שתמיד יהיה שם
-        self.user_list_box.insert(tk.END, "Bot")
-        self.user_list_box.itemconfig(tk.END, {'fg': '#ffff00'})
 
         # הוספת שאר המשתמשים
         for user in users:
