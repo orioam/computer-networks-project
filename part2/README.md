@@ -1,4 +1,4 @@
-# 📡 Computer Networks Project - Part 2: Multithreaded TCP Chat System
+# 📡 Part 2: Multithreaded TCP Chat System
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
 ![Architecture](https://img.shields.io/badge/Architecture-Client%2FServer-orange)
