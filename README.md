@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Phase%201-success)
 
 # Members:
-Ori Amsalem, Ofek Drori
+Ori Amsalem, Ofek Drori, Sharon Shaul
 
 ## 📘 Project Overview
 This project focuses on a practical and in-depth analysis of the **TCP/IP** protocol suite, bridging the gap between theoretical concepts learned in the "Computer Networks" course and real-world application.

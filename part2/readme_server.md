@@ -3,9 +3,6 @@
 ![Network](https://img.shields.io/badge/Protocol-TCP%2FIP-orange)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-## 👥 Members
-Ori Amsalem, Ofek Drori
-
 ## 📘 Overview
 The **Server** acts as the central hub of the chat system. It utilizes **multi-threading** to handle multiple client connections simultaneously, ensuring efficient message routing and real-time user management without blocking.
 
