@@ -4,7 +4,6 @@ import tkinter as tk
 from tkinter import scrolledtext, messagebox, simpledialog
 import sys
 import subprocess
-import random
 
 # --- הגדרות עיצוב (ערכת נושא כהה/כחולה) ---
 COLOR_BG = "#1e2124"        # רקע כללי
@@ -21,23 +20,6 @@ FONT_BOLD = ("Segoe UI", 11, "bold")
 HOST = '127.0.0.1'
 PORT = 5555
 SEPARATOR = "|"
-
-# --- בוט חכם (Easter Egg) ---
-class AutoBot:
-    TRIGGERS = {
-        "hello": ["System: Greetings.", "System: Online and listening."],
-        "joke": ["Why do Java developers wear glasses? Because they don't C#.", "I asked my router for a joke, but it dropped the packet."],
-        "status": ["System: All systems nominal.", "System: CPU at optimal temperature."],
-        "secret": ["You found the easter egg! 🥚"]
-    }
-    
-    @staticmethod
-    def get_response(msg):
-        msg = msg.lower()
-        for key, responses in AutoBot.TRIGGERS.items():
-            if key in msg:
-                return random.choice(responses)
-        return None
 
 # --- המחלקה הראשית של האפליקציה ---
 class ModernChatClient:
@@ -66,8 +48,7 @@ class ModernChatClient:
         self.root.mainloop()
 
     def setup_ui(self):
-        """ בניית ה-Layout של החלון: צד ימין צ'אט, צד שמאל משתמשים """
-        # --- תפריט צד (רשימת משתמשים) ---
+        # תפריט צד (רשימת משתמשים)
         self.frame_sidebar = tk.Frame(self.root, bg=COLOR_SIDEBAR, width=200)
         self.frame_sidebar.pack(side=tk.LEFT, fill=tk.Y)
         self.frame_sidebar.pack_propagate(False) # מונע התכווצות
@@ -81,7 +62,7 @@ class ModernChatClient:
         # כפתור לפתיחת לקוח חדש (לבדיקות)
         tk.Button(self.frame_sidebar, text="+ New Client", bg="#2c2f33", fg="white", bd=0, command=self.spawn_new_client).pack(side=tk.BOTTOM, fill=tk.X, pady=10, padx=10)
 
-        # --- אזור הצ'אט הראשי ---
+        # אזור הצ'אט הראשי
         self.frame_chat = tk.Frame(self.root, bg=COLOR_BG)
         self.frame_chat.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
@@ -164,7 +145,7 @@ class ModernChatClient:
                     if self.selected_user == sender:
                         self.display_message(sender, content, 'other')
                     else:
-                        # התראה ויזואלית (אפשר להוסיף צליל)
+                        # התראה ויזואלית
                         print(f"New message from {sender}")
 
                 elif cmd == "SYSTEM":
@@ -178,32 +159,18 @@ class ModernChatClient:
         msg = self.entry_msg.get().strip()
         if not msg or not self.selected_user: return
         
-        # 1. שליחת ההודעה לשרת
+        # שליחת ההודעה לשרת
         try:
             full_msg = f"{self.selected_user}{SEPARATOR}{msg}"
             self.sock.send(full_msg.encode('utf-8'))
             
-            # 2. הצגה במסך שלי ושמירה בהיסטוריה
+            # הצגה במסך שלי ושמירה בהיסטוריה
             self.display_message("Me", msg, 'me')
             self.add_message_to_history(self.selected_user, "Me", msg)
             self.entry_msg.delete(0, tk.END)
-            
-            # 3. בדיקת בוט (Alice/AutoBot)
-            if self.selected_user.lower() == "bot":
-                self.handle_bot_response(msg)
-                
+
         except Exception as e:
             messagebox.showerror("Error", "Failed to send message")
-
-    def handle_bot_response(self, user_msg):
-        """ לוגיקה מקומית שמדמה בוט אם מדברים אליו """
-        reply = AutoBot.get_response(user_msg)
-        if reply:
-            def delayed_reply():
-                self.add_message_to_history("Bot", "Bot", reply)
-                if self.selected_user == "Bot":
-                    self.display_message("Bot", reply, 'other')
-            self.root.after(1000, delayed_reply)
 
     def on_user_select(self, event):
         selection = self.user_list_box.curselection()

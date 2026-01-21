@@ -97,7 +97,7 @@ def start_server():
     while server_running:
         try:
             conn, addr = server.accept()
-            # יצירת Thread לכל לקוח חדש
+            # new thread to every new client
             thread = threading.Thread(target=handle_client, args=(conn, addr))
             thread.daemon = True # ייסגר אוטומטית כשהתוכנית הראשית תיסגר
             thread.start()
