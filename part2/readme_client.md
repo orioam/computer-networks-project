@@ -22,7 +22,7 @@ The **Client** is a graphical application designed for real-time communication. 
 1.  Ensure the **Server** is running first.
 2.  Open a new terminal and run:
     ```bash
-    python gui_client.py
+    python client.py
     ```
 3.  Enter your username and start chatting!
     * *Tip:* You can run multiple instances to simulate a conversation.
