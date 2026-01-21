@@ -120,3 +120,25 @@ Open a terminal in the project folder and run:
 
 ```bash
 python server.py
+
+```
+
+*Expected Output:* `[INIT] Server running on 0.0.0.0:5555`
+
+**2. Start a Client:**
+
+Open a **new** terminal and run:
+
+```bash
+python client.py
+
+```
+* Enter a username when prompted.
+* The main chat window will appear.
+
+
+**3. Simulate a Chat:**
+
+* Open another terminal and run `client.py` again.
+* Login with a **different** name.
+* Select the other user from the list and start chatting.
