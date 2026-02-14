@@ -11,7 +11,6 @@
 3. [Custom Application Protocol](#3-custom-application-protocol)
 4. [Implementation Details](#4-implementation-details)
 5. [Installation & Usage Guide](#5-installation--usage-guide)
-6. [Traffic Analysis (Wireshark)](#6-traffic-analysis-wireshark)
 
 ---
 
