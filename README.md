@@ -1,7 +1,6 @@
 # 📡 TCP/IP Traffic Analysis & Network Project
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
 ![Wireshark](https://img.shields.io/badge/Tool-Wireshark-red?style=flat&logo=wireshark)
-![Status](https://img.shields.io/badge/Status-Phase%201-success)
 
 # Members:
 Ori Amsalem 206508731, Ofek Drori 211785027, Sharon Shaul 209321314
@@ -32,5 +31,5 @@ The project simulates end-to-end network traffic, starting from data generation 
 ## 📂 Project Structure
 ```text
 ├── part1_packet_analysis/   # Input CSV files, PCAP captures and Jupyter Notebooks for data 
-├── part2_/                  # Python socket server with multiple clients     
+├── part2/                   # Python socket server with multiple clients     
 └── README.md                # Project documentation
